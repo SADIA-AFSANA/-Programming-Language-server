@@ -4,10 +4,16 @@ const port = process.env.PORT || 5000;
 
 
 
+const categories = require('./data/categories.json')
+
 app.get('/', (req, res) => {
-    res.send('News Api Running and walking')
+    res.send('News Api Running and walk')
 });
+app.get('/language-categories', (req, res) => {
+    res.send(categories)
+})
 
 app.listen(port, () => {
     console.log('Programming language', port);
 })
+
